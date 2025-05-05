@@ -1,0 +1,132 @@
+.dashboard {
+  padding: 2rem;
+  position: relative;
+}
+
+.meetings-section {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.meetings-section:last-child {
+  margin-bottom: 0;
+}
+
+.meetings-section h2 {
+  margin-bottom: 2rem;
+  color: #e1e1e1;
+  font-size: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.meetings-section h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(to bottom, #8b5cf6, #6366f1);
+  border-radius: 2px;
+}
+
+.meetings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.meeting-card {
+  background: rgba(45, 45, 45, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(61, 61, 61, 0.5);
+}
+
+.meeting-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  border-color: #8b5cf6;
+  background: rgba(45, 45, 45, 0.9);
+}
+
+.meeting-card h4 {
+  margin-bottom: 0.5rem;
+  color: #e1e1e1;
+  font-size: 1.2rem;
+}
+
+.meeting-date {
+  color: #a1a1a1;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.view-summary-btn, .join-meeting-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-summary-btn {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.view-summary-btn:hover {
+  background-color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.join-meeting-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.join-meeting-btn:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+.meeting-card.upcoming {
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.meeting-card.upcoming::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 40px 40px 0;
+  border-color: transparent #10b981 transparent transparent;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+  
+  .meetings-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .meetings-section {
+    margin-bottom: 2rem;
+  }
+}
